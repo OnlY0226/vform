@@ -1,0 +1,710 @@
+{
+  "widgetList": [
+    {
+      "type": "grid",
+      "category": "container",
+      "icon": "grid",
+      "cols": [
+        {
+          "type": "grid-col",
+          "category": "container",
+          "icon": "grid-col",
+          "internal": true,
+          "widgetList": [
+            {
+              "type": "select",
+              "icon": "select-field",
+              "formItemFlag": true,
+              "options": {
+                "name": "caseId",
+                "label": "Case Id",
+                "labelZh": "案例ID",
+                "labelAlign": "",
+                "defaultValue": "",
+                "placeholder": "",
+                "columnWidth": "200px",
+                "size": "",
+                "labelWidth": null,
+                "labelHidden": false,
+                "disabled": false,
+                "hidden": false,
+                "clearable": true,
+                "filterable": false,
+                "allowCreate": false,
+                "remote": false,
+                "automaticDropdown": false,
+                "multiple": false,
+                "multipleLimit": 0,
+                "optionItems": [
+                  {
+                    "value": "001",
+                    "label": "001"
+                  },
+                  {
+                    "value": "1000",
+                    "label": "1000"
+                  },
+                  {
+                    "value": "12345",
+                    "label": "12345"
+                  },
+                  {
+                    "value": "2000",
+                    "label": "2000"
+                  },
+                  {
+                    "value": "2022100",
+                    "label": "2022100"
+                  },
+                  {
+                    "value": "CASE",
+                    "label": "CASE"
+                  },
+                  {
+                    "value": "CASE000",
+                    "label": "CASE000"
+                  },
+                  {
+                    "value": "CASE001",
+                    "label": "CASE001"
+                  },
+                  {
+                    "value": "CASE002",
+                    "label": "CASE002"
+                  },
+                  {
+                    "value": "CASE00A",
+                    "label": "CASE00A"
+                  },
+                  {
+                    "value": "CASE1030",
+                    "label": "CASE1030"
+                  },
+                  {
+                    "value": "CASETEST2",
+                    "label": "CASETEST2"
+                  },
+                  {
+                    "value": "Case 001",
+                    "label": "Case 001"
+                  },
+                  {
+                    "value": "Case 006",
+                    "label": "Case 006"
+                  },
+                  {
+                    "value": "Case 008",
+                    "label": "Case 008"
+                  },
+                  {
+                    "value": "Case 123",
+                    "label": "Case 123"
+                  },
+                  {
+                    "value": "Case 1234",
+                    "label": "Case 1234"
+                  },
+                  {
+                    "value": "Case ABCD",
+                    "label": "Case ABCD"
+                  },
+                  {
+                    "value": "Test Case",
+                    "label": "Test Case"
+                  },
+                  {
+                    "value": "case-1-4-22-01",
+                    "label": "case-1-4-22-01"
+                  }
+                ],
+                "required": true,
+                "requiredHint": "",
+                "validation": "",
+                "validationHint": "",
+                "customClass": [],
+                "labelIconClass": null,
+                "labelIconPosition": "rear",
+                "labelTooltip": null,
+                "onCreated": "",
+                "onMounted": "const CaseIdRef = this.getWidgetRef('caseId')\nwindow.axios.get('/api/nuxeo/form/metadata/list', {params: {\n  docType: 'Case',\n  filterKey: 'case:caseId',\n  key: 'case:caseId',\n  filterValue: ''\n}}).then(res => {\n  const reponse = res.map(item => ({\n    value: item,\n    label: item\n  }))\n  CaseIdRef.loadOptions(reponse)\n}).catch(err => {\n})",
+                "onRemoteQuery": "",
+                "onChange": "const ProspectNameRef = this.getWidgetRef('prospectName')\n\nwindow.axios.get('/api/nuxeo/form/metadata/list', {params: {\n  docType: 'Prospect',\n  filterKey: 'case:caseId',\n  key: 'prospect:prospectName',\n  filterValue: value\n}}).then(res => {\n  const reponse = res.map(item => ({\n    value: item,\n    label: item\n  }))\n  \n  const index = reponse.findIndex((item) => item.value === ProspectNameRef.getValue())\n  if (index === -1) ProspectNameRef.setValue('')\n  ProspectNameRef.loadOptions(reponse)\n}).catch(err => {\n})",
+                "onFocus": "",
+                "onBlur": "",
+                "onValidate": ""
+              },
+              "id": "select45907"
+            }
+          ],
+          "options": {
+            "name": "gridCol83506",
+            "hidden": false,
+            "span": 24,
+            "offset": 0,
+            "push": 0,
+            "pull": 0,
+            "responsive": false,
+            "md": 12,
+            "sm": 12,
+            "xs": 12,
+            "customClass": []
+          },
+          "id": "grid-col-83506"
+        }
+      ],
+      "options": {
+        "name": "grid10756",
+        "hidden": false,
+        "gutter": 12,
+        "colHeight": null,
+        "customClass": ""
+      },
+      "id": "grid10756"
+    },
+    {
+      "type": "grid",
+      "category": "container",
+      "icon": "grid",
+      "cols": [
+        {
+          "type": "grid-col",
+          "category": "container",
+          "icon": "grid-col",
+          "internal": true,
+          "widgetList": [
+            {
+              "type": "select",
+              "icon": "select-field",
+              "formItemFlag": true,
+              "options": {
+                "name": "prospectName",
+                "label": "Prospect Name",
+                "labelZh": "潛在客戶名稱",
+                "labelAlign": "",
+                "defaultValue": "",
+                "placeholder": "",
+                "columnWidth": "200px",
+                "size": "",
+                "labelWidth": null,
+                "labelHidden": false,
+                "disabled": false,
+                "hidden": false,
+                "clearable": true,
+                "filterable": false,
+                "allowCreate": false,
+                "remote": false,
+                "automaticDropdown": false,
+                "multiple": false,
+                "multipleLimit": 0,
+                "optionItems": [
+                  {
+                    "value": "PROS000",
+                    "label": "PROS000"
+                  },
+                  {
+                    "value": "PROS1030",
+                    "label": "PROS1030"
+                  },
+                  {
+                    "value": "hk",
+                    "label": "hk"
+                  },
+                  {
+                    "value": "pr001",
+                    "label": "pr001"
+                  }
+                ],
+                "required": true,
+                "requiredHint": "",
+                "validation": "",
+                "validationHint": "",
+                "customClass": [],
+                "labelIconClass": null,
+                "labelIconPosition": "rear",
+                "labelTooltip": null,
+                "onCreated": "",
+                "onMounted": "// const ProspectNameRef = this.getWidgetRef('prospectName')\n// window.axios.get('/api/nuxeo/form/metadata/list', {params: {\n//   docType: 'Prospect',\n//   filterKey: 'case:caseId',\n//   key: 'prospect:prospectName',\n//   filterValue: ''\n// }}).then(res => {\n//   const reponse = res.map(item => ({\n//     value: item,\n//     label: item\n//   }))\n//   ProspectNameRef.loadOptions(reponse)\n// }).catch(err => {\n// })",
+                "onRemoteQuery": "",
+                "onChange": "",
+                "onFocus": "",
+                "onBlur": "",
+                "onValidate": ""
+              },
+              "id": "select74433"
+            },
+            {
+              "type": "select",
+              "icon": "select-field",
+              "formItemFlag": true,
+              "options": {
+                "name": "user_approver_name",
+                "label": "Approver",
+                "labelZh": "審批人",
+                "labelAlign": "",
+                "defaultValue": "",
+                "placeholder": "",
+                "columnWidth": "200px",
+                "size": "",
+                "labelWidth": null,
+                "labelHidden": false,
+                "disabled": false,
+                "hidden": false,
+                "clearable": true,
+                "filterable": true,
+                "allowCreate": false,
+                "remote": false,
+                "automaticDropdown": false,
+                "multiple": false,
+                "multipleLimit": 0,
+                "optionItems": [
+                  {
+                    "value": "Administrator",
+                    "label": "Administrator<michael.chan@wclsolution.com>"
+                  },
+                  {
+                    "value": "ikki_cheng",
+                    "label": "ikki_cheng<ikki.cheng@wclsolution.com>"
+                  },
+                  {
+                    "value": "operation",
+                    "label": "operation<kevin.tsang@wclsolution.com>"
+                  },
+                  {
+                    "value": "procurement",
+                    "label": "procurement<kevin.tsang@wclsolution.com>"
+                  },
+                  {
+                    "value": "test",
+                    "label": "test<test@qq.com>"
+                  }
+                ],
+                "required": true,
+                "requiredHint": "",
+                "validation": "",
+                "validationHint": "",
+                "customClass": [],
+                "labelIconClass": null,
+                "labelIconPosition": "rear",
+                "labelTooltip": null,
+                "onCreated": "",
+                "onMounted": "const ApproverRef = this.getWidgetRef('user_approver_name')\nwindow.axios.post('/api//nuxeo/identity/users', {}).then(res => {\n  const reponse = res.map(item => ({\n    value: item.username,\n    label: `${item.username}<${item.email}>`\n  }))\n  ApproverRef.loadOptions(reponse)\n}).catch(err => {\n})",
+                "onRemoteQuery": "",
+                "onChange": "// const prospectNameRef = this.getWidgetRef('prospectName')\n// prospectNameRef.setValue(value)",
+                "onFocus": "",
+                "onBlur": "",
+                "onValidate": ""
+              },
+              "id": "select26617"
+            }
+          ],
+          "options": {
+            "name": "gridCol111344",
+            "hidden": false,
+            "span": 12,
+            "offset": 0,
+            "push": 0,
+            "pull": 0,
+            "responsive": false,
+            "md": 12,
+            "sm": 12,
+            "xs": 12,
+            "customClass": []
+          },
+          "id": "grid-col-111344"
+        },
+        {
+          "type": "grid-col",
+          "category": "container",
+          "icon": "grid-col",
+          "internal": true,
+          "widgetList": [
+            {
+              "type": "select",
+              "icon": "select-field",
+              "formItemFlag": true,
+              "options": {
+                "name": "country",
+                "label": "Country",
+                "labelZh": "國家",
+                "labelAlign": "",
+                "defaultValue": "CN",
+                "placeholder": "",
+                "columnWidth": "200px",
+                "size": "",
+                "labelWidth": null,
+                "labelHidden": false,
+                "disabled": false,
+                "hidden": false,
+                "clearable": false,
+                "filterable": false,
+                "allowCreate": false,
+                "remote": false,
+                "automaticDropdown": false,
+                "multiple": false,
+                "multipleLimit": 0,
+                "optionItems": [
+                  {
+                    "label": "CN",
+                    "value": "CN"
+                  },
+                  {
+                    "label": "HK",
+                    "value": "HK"
+                  }
+                ],
+                "required": true,
+                "requiredHint": "",
+                "validation": "",
+                "validationHint": "",
+                "customClass": [],
+                "labelIconClass": null,
+                "labelIconPosition": "rear",
+                "labelTooltip": null,
+                "onCreated": "",
+                "onMounted": "",
+                "onRemoteQuery": "",
+                "onChange": "",
+                "onFocus": "",
+                "onBlur": "",
+                "onValidate": ""
+              },
+              "id": "select39681"
+            },
+            {
+              "type": "select",
+              "icon": "select-field",
+              "formItemFlag": true,
+              "options": {
+                "name": "user_copy_personnel_name",
+                "label": "Copy Personal",
+                "labelZh": "複製人員",
+                "labelAlign": "",
+                "defaultValue": "",
+                "placeholder": "",
+                "columnWidth": "200px",
+                "size": "",
+                "labelWidth": null,
+                "labelHidden": false,
+                "disabled": false,
+                "hidden": false,
+                "clearable": false,
+                "filterable": true,
+                "allowCreate": false,
+                "remote": false,
+                "automaticDropdown": false,
+                "multiple": false,
+                "multipleLimit": 0,
+                "optionItems": [
+                  {
+                    "value": "Administrator",
+                    "label": "Administrator<michael.chan@wclsolution.com>"
+                  },
+                  {
+                    "value": "ikki_cheng",
+                    "label": "ikki_cheng<ikki.cheng@wclsolution.com>"
+                  },
+                  {
+                    "value": "operation",
+                    "label": "operation<kevin.tsang@wclsolution.com>"
+                  },
+                  {
+                    "value": "procurement",
+                    "label": "procurement<kevin.tsang@wclsolution.com>"
+                  },
+                  {
+                    "value": "test",
+                    "label": "test<test@qq.com>"
+                  }
+                ],
+                "required": false,
+                "requiredHint": "",
+                "validation": "",
+                "validationHint": "",
+                "customClass": [],
+                "labelIconClass": null,
+                "labelIconPosition": "rear",
+                "labelTooltip": null,
+                "onCreated": "",
+                "onMounted": "const copyPersonnelRef = this.getWidgetRef('user_copy_personnel_name')\nwindow.axios.post('/api//nuxeo/identity/users', {}).then(res => {\n  const reponse = res.map(item => ({\n    value: item.username,\n    label: `${item.username}<${item.email}>`\n  }))\n  copyPersonnelRef.loadOptions(reponse)\n}).catch(err => {\n})",
+                "onRemoteQuery": "",
+                "onChange": "",
+                "onFocus": "",
+                "onBlur": "",
+                "onValidate": ""
+              },
+              "id": "select82783"
+            }
+          ],
+          "options": {
+            "name": "gridCol40570",
+            "hidden": false,
+            "span": 12,
+            "offset": 0,
+            "push": 0,
+            "pull": 0,
+            "responsive": false,
+            "md": 12,
+            "sm": 12,
+            "xs": 12,
+            "customClass": []
+          },
+          "id": "grid-col-40570"
+        }
+      ],
+      "options": {
+        "name": "grid101504",
+        "hidden": false,
+        "gutter": 12,
+        "colHeight": null,
+        "customClass": []
+      },
+      "id": "grid101504"
+    },
+    {
+      "type": "grid",
+      "category": "container",
+      "icon": "grid",
+      "cols": [
+        {
+          "type": "grid-col",
+          "category": "container",
+          "icon": "grid-col",
+          "internal": true,
+          "widgetList": [
+            {
+              "type": "textarea",
+              "icon": "textarea-field",
+              "formItemFlag": true,
+              "options": {
+                "name": "description",
+                "label": "Description",
+                "labelZh": "描述",
+                "labelAlign": "",
+                "rows": 3,
+                "defaultValue": "",
+                "placeholder": "",
+                "columnWidth": "200px",
+                "size": "",
+                "labelWidth": null,
+                "labelHidden": false,
+                "readonly": false,
+                "disabled": false,
+                "hidden": false,
+                "required": false,
+                "requiredHint": "",
+                "validation": "",
+                "validationHint": "",
+                "customClass": [],
+                "labelIconClass": null,
+                "labelIconPosition": "rear",
+                "labelTooltip": null,
+                "minLength": null,
+                "maxLength": null,
+                "showWordLimit": false,
+                "onCreated": "",
+                "onMounted": "",
+                "onInput": "",
+                "onChange": "",
+                "onFocus": "",
+                "onBlur": "",
+                "onValidate": ""
+              },
+              "id": "textarea52863"
+            }
+          ],
+          "options": {
+            "name": "gridCol64822",
+            "hidden": false,
+            "span": 24,
+            "offset": 0,
+            "push": 0,
+            "pull": 0,
+            "responsive": false,
+            "md": 12,
+            "sm": 12,
+            "xs": 12,
+            "customClass": ""
+          },
+          "id": "grid-col-64822"
+        }
+      ],
+      "options": {
+        "name": "grid73839",
+        "hidden": false,
+        "gutter": 12,
+        "colHeight": null,
+        "customClass": ""
+      },
+      "id": "grid73839"
+    },
+    {
+      "type": "grid",
+      "category": "container",
+      "icon": "grid",
+      "cols": [
+        {
+          "type": "grid-col",
+          "category": "container",
+          "icon": "grid-col",
+          "internal": true,
+          "widgetList": [
+            {
+              "type": "file-upload",
+              "icon": "file-upload-field",
+              "formItemFlag": true,
+              "options": {
+                "name": "excelCalcFile",
+                "label": "Excel Calc File",
+                "labelZh": "Excel 計算文件",
+                "labelWidth": null,
+                "labelHidden": false,
+                "columnWidth": "200px",
+                "disabled": false,
+                "hidden": false,
+                "required": true,
+                "requiredHint": "",
+                "customRule": "",
+                "customRuleHint": "",
+                "uploadURL": "/api/docpal/workflow/files/upload",
+                "uploadTip": "",
+                "withCredentials": true,
+                "multipleSelect": true,
+                "showFileList": true,
+                "limit": 3,
+                "fileMaxSize": 5,
+                "fileTypes": [
+                  "doc",
+                  "docx",
+                  "xls",
+                  "xlsx",
+                  "png",
+                  "jpeg",
+                  "gif"
+                ],
+                "customClass": [],
+                "labelIconClass": null,
+                "labelIconPosition": "rear",
+                "labelTooltip": null,
+                "onCreated": "const widget = this\nconst cookieToken = getCookie('docpal-token');\nwidget.setUploadHeader('Authorization', `Bearer ${cookieToken}`)\nfunction getCookie (name) {\n  var strCookies = document.cookie;\n  var array = strCookies.split(';');\n  for (var i = 0; i < array.length; i++) {\n    var item = array[i].split(\"=\");\n    if (item[0].replace(' ', '') === name) {\n        return item[1];\n    }\n  }\n  return null;\n}\n\n",
+                "onMounted": "",
+                "onBeforeUpload": "",
+                "onUploadSuccess": "",
+                "onUploadError": "const tips = localStorage.getItem(\"v_form_locale\") === 'zh-CN' ? \"上传失败\" : \"Upload Failed\"\nconst message = JSON.parse(error.message).message\nthis.$message({\n  message: `${ tips }：${ message }`,\n  duration: 3000,\n  type: 'error'\n})",
+                "onFileRemove": "const id = file.id || file.response[0].contentId\nif (!id) return\nwindow.axios.delete(`/api/docpal/workflow/task/attachment?attachmentId=${id}`).then(res => {\n}).catch(err => {\n})",
+                "onValidate": ""
+              },
+              "id": "fileupload63075"
+            }
+          ],
+          "options": {
+            "name": "gridCol97769",
+            "hidden": false,
+            "span": 12,
+            "offset": 0,
+            "push": 0,
+            "pull": 0,
+            "responsive": false,
+            "md": 12,
+            "sm": 12,
+            "xs": 12,
+            "customClass": []
+          },
+          "id": "grid-col-97769"
+        },
+        {
+          "type": "grid-col",
+          "category": "container",
+          "icon": "grid-col",
+          "internal": true,
+          "widgetList": [
+            {
+              "type": "file-upload",
+              "icon": "file-upload-field",
+              "formItemFlag": true,
+              "options": {
+                "name": "supplementaryFiles",
+                "label": "Supplementary Files",
+                "labelZh": "補充文件",
+                "labelWidth": null,
+                "labelHidden": false,
+                "columnWidth": "200px",
+                "disabled": false,
+                "hidden": false,
+                "required": false,
+                "requiredHint": "",
+                "customRule": "",
+                "customRuleHint": "",
+                "uploadURL": "/api/docpal/workflow/files/upload",
+                "uploadTip": "",
+                "withCredentials": false,
+                "multipleSelect": true,
+                "showFileList": true,
+                "limit": 3,
+                "fileMaxSize": 5,
+                "fileTypes": [
+                  "doc",
+                  "docx",
+                  "xls",
+                  "xlsx",
+                  "jpeg",
+                  "png",
+                  "gif"
+                ],
+                "customClass": [],
+                "labelIconClass": null,
+                "labelIconPosition": "rear",
+                "labelTooltip": null,
+                "onCreated": "const widget = this\nconst cookieToken = getCookie('docpal-token');\nwidget.setUploadHeader('Authorization', `Bearer ${cookieToken}`)\nfunction getCookie (name) {\n  var strCookies = document.cookie;\n  var array = strCookies.split(';');\n  for (var i = 0; i < array.length; i++) {\n    var item = array[i].split(\"=\");\n    if (item[0].replace(' ', '') === name) {\n        return item[1];\n    }\n  }\n  return null;\n}\n\n",
+                "onMounted": "",
+                "onBeforeUpload": "",
+                "onUploadSuccess": "",
+                "onUploadError": "const tips = localStorage.getItem(\"v_form_locale\") === 'zh-CN' ? \"上传失败\" : \"Upload Failed\"\nconst message = JSON.parse(error.message).message\nthis.$message({\n  message: `${ tips }：${ message }`,\n  duration: 3000,\n  type: 'error'\n})",
+                "onFileRemove": "const id = file.id || file.response[0].contentId\nif (!id) return\nwindow.axios.delete(`/api/docpal/workflow/task/attachment?attachmentId=${id}`).then(res => {\n}).catch(err => {\n})",
+                "onValidate": ""
+              },
+              "id": "fileupload109777"
+            }
+          ],
+          "options": {
+            "name": "gridCol55426",
+            "hidden": false,
+            "span": 12,
+            "offset": 0,
+            "push": 0,
+            "pull": 0,
+            "responsive": false,
+            "md": 12,
+            "sm": 12,
+            "xs": 12,
+            "customClass": ""
+          },
+          "id": "grid-col-55426"
+        }
+      ],
+      "options": {
+        "name": "grid81577",
+        "hidden": false,
+        "gutter": 12,
+        "colHeight": null,
+        "customClass": ""
+      },
+      "id": "grid81577"
+    }
+  ],
+  "formConfig": {
+    "modelName": "formData",
+    "refName": "vForm",
+    "rulesName": "rules",
+    "labelWidth": 80,
+    "labelPosition": "top",
+    "size": "",
+    "labelAlign": "label-left-align",
+    "cssCode": "",
+    "customClass": [],
+    "functions": "function getCookie (name) {\n  var strCookies = document.cookie;\n  var array = strCookies.split(';');\n  for (var i = 0; i < array.length; i++) {\n    var item = array[i].split(\"=\");\n    if (item[0] == name) {\n        return item[1];\n    }\n  }\n  return null;\n}\n",
+    "layoutType": "PC",
+    "onFormCreated": "",
+    "onFormMounted": "",
+    "onFormDataChange": ""
+  }
+}

@@ -1,0 +1,9 @@
+.form-item-flex {
+  display: flex;
+  ::v-deep .el-form-item__label {
+    width: var(--label-width);
+  }
+  ::v-deep .el-form-item__content {
+    flex: 1;
+  }
+}
